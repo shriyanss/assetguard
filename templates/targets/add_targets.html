@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Targets - AssetGuard</title>
+</head>
+
+<body>
+    <h1><a href=/>AssetGuard</a></h1>
+    <a href="javascript:history.back()">&lt; Back</a><br>
+    {{ message }}
+    <h3>Add a single target</h3>
+    <form action="/add_targets" method="post">
+        <input type="text" name="domain" required placeholder="Target domain" value="{{ domain }}"><br>
+        <input type="text" name="program_url" placeholder="Program URL" value="{{ program_url }}"><br>
+        Enabled: <input type="checkbox" name="enabled" value="1"><br>
+        <input type="text" name="type" value="single_domain" hidden>
+        <input type="submit" value="Add domain">
+    </form>
+</body>
+
+</html>

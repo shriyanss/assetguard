@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AssetGuard</title>
+</head>
+<body>
+    <h1><a href=/>AssetGuard</a></h1>
+
+    {{ message }} <br><br>
+
+    <form action="" method="post">
+        Enter a time (24-hour format): 
+        <input type="number" name="hour" value="{{ hour }}" placeholder="Hour" required>:
+        <input type="number" name="minute" value="{{ minute }}" placeholder="Minute" required>
+
+        <br><br>
+
+        Select day:
+        <select name="day" required>
+            <option value="everyday">Everyday</option>
+            <option value="sunday">Sunday</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+        </select><br><br>
+
+        Select command to run:
+        <select name="command_id" required>
+            {{ command_select }}
+        </select>
+        
+        <input type="submit" value="Update">
+    </form>
+
+    <h4></h4>
+</body>
+</html>

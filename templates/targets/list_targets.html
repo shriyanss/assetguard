@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Targets - AssetGuard</title>
+</head>
+<body>
+    <h1><a href=/>AssetGuard</a></h1>
+    <a href="javascript:history.back()">&lt; Back</a><br>
+
+    {{ message }}
+
+    <h2>Targets List</h2>
+    <h4><small>If you'll enable/disable a target here, it will be enabled/disabled for asset discovery only.</small></h4>
+    {{ table | safe }}
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commands - AssetGuard</title>
+</head>
+<body>
+    <h1><a href=/>AssetGuard</a></h1>
+    <a href="javascript:history.back()">&lt; Back</a><br>
+    <h2>Set commands</h2>
+    <h3>Cheatsheet</h3>
+
+    <h4>General Execution</h4>
+    <p>
+        <ul>
+            <li>
+                <b><code>$exec</code></b>: Executable binary path for the tool (set it in <a href="/tools" target="_blank">Manage tools</a>)
+            </li>
+        </ul>
+    </p>
+
+    <h4>Target phrases</h4>
+    <p>
+        Target phrases (used to specify the target):-
+        <ul>
+            <li>
+                <b><code>$domain</code></b>: The target domain for the tool
+            </li>
+            <li>
+                <b><code>$domain_file</code></b>: The target domain file for the tool
+            </li>
+        </ul>
+    </p>
+
+    <h4>Output phrases</h4>
+    <p>
+        Phrases you can use to specify the output
+        <ul>
+            <li>
+                <b><code>$output</code></b>: Generate a new name for the output file
+            </li>
+        </ul>
+    </p>
+
+    <hr>
+    <h3>Available commands</h3>
+    {{ tools_message }}
+    {{ tools|safe }}
+
+    <hr>
+
+    <!-- form to create a new command -->
+    <h3>Add a new command</h3>
+    <form action="/new_command" method="post">
+        Enabled tools: <select name="tool_name" required>{{ tools_list|safe }}</select><br>
+        File command: <input type="checkbox" name="file_command"><br>
+        Command:- <br> <textarea name="command" required></textarea><br>
+
+        <input type="submit" value="Add new command">
+    </form>
+</body>
+</html>

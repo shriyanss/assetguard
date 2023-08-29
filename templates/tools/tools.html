@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - AssetGuard</title>
+</head>
+
+<body>
+    <h1><a href=/>AssetGuard</a></h1>
+    <a href="javascript:history.back()">&lt; Back</a><br>
+
+    {{ message|safe }}
+
+    <h2>Supported Tools</h2>
+    <form action="/tools" method="POST">
+        <h3>Asset Discovery</h3>
+        <input type="checkbox" name="amass_enabled" id="amass" {{ amass_checked }} value="1">
+        <label>Amass</label>
+        <input type="text" name="amass_path" placeholder="Binary path" value="{{ amass_binary }}">
+        <br>
+
+        <input type="checkbox" name="subfinder_enabled" id="subfinder" {{ subfinder_checked }} value="1">
+        <label>Subfinder</label>
+        <input type="text" name="subfinder_path" placeholder="Binary path" value="{{ subfinder_binary }}">
+        <br>
+
+        <input type="submit" value="Update List">
+    </form>
+</body>
+
+</html>
